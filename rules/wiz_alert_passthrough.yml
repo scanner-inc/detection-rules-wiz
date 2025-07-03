@@ -1,0 +1,18 @@
+# schema: https://scanner.dev/schema/scanner-detection-rule.v1.json
+name: Wiz Alert Passthrough
+description: |-
+  Detect open alerts with severity levels other than informational.
+enabled: true
+severity: Medium
+query_text: |-
+  %ingest.source_type:wiz
+  status:OPEN
+  (not severity:INFORMATIONAL)
+  | groupbycount(severity)
+  | where @q.count > 1
+time_range_s: 300
+run_frequency_s: 60
+event_sink_keys:
+- medium_severity_alerts
+tags:
+- source.wiz

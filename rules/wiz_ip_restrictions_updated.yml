@@ -1,0 +1,21 @@
+# schema: https://scanner.dev/schema/scanner-detection-rule.v1.json
+name: Wiz IP Restrictions Updated
+description: |-
+  Detect when IP restrictions are updated. This may allow
+  unauthorized actors to gain access to Wiz resources.
+enabled: true
+severity: High
+query_text: |-
+  %ingest.source_type:wiz
+  action:UpdateIPRestrictions
+  status:SUCCESS
+  | groupbycount(user.name)
+  | where @q.count > 0
+time_range_s: 300
+run_frequency_s: 60
+event_sink_keys:
+- high_severity_alerts
+tags:
+- tactics.ta0006.credential_access
+- techniques.t1556.modify_authentication_process
+- source.wiz

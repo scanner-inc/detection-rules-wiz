@@ -1,0 +1,19 @@
+# schema: https://scanner.dev/schema/scanner-detection-rule.v1.json
+name: Wiz Support Contact List Updated
+description: |-
+  Detect when the support contact list is updated. Unauthorized
+  changes may impact incident response and support communications.
+enabled: true
+severity: Low
+query_text: |-
+  %ingest.source_type:wiz
+  action:UpdateSupportContactList
+  status:SUCCESS
+  | groupbycount(user.name)
+  | where @q.count > 0
+time_range_s: 300
+run_frequency_s: 60
+event_sink_keys:
+- low_severity_alerts
+tags:
+- source.wiz

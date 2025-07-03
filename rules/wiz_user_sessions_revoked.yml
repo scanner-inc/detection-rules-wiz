@@ -1,0 +1,20 @@
+# schema: https://scanner.dev/schema/scanner-detection-rule.v1.json
+name: Wiz User Sessions Revoked
+description: |-
+  Detect when user sessions are revoked.
+enabled: true
+severity: Medium
+query_text: |-
+  %ingest.source_type:wiz
+  action:RevokeUserSessions
+  status:SUCCESS
+  | groupbycount(user.name)
+  | where @q.count > 0
+time_range_s: 300
+run_frequency_s: 60
+event_sink_keys:
+- medium_severity_alerts
+tags:
+- tactics.ta0040.impact
+- techniques.t1531.account_access_removal
+- source.wiz

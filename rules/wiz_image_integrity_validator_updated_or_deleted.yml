@@ -1,0 +1,20 @@
+# schema: https://scanner.dev/schema/scanner-detection-rule.v1.json
+name: Wiz Image Integrity Validator Updated or Deleted
+description: |-
+  Detect when image integrity validators are updated or deleted.
+enabled: true
+severity: Medium
+query_text: |-
+  %ingest.source_type:wiz
+  action:(UpdateImageIntegrityValidator DeleteImageIntegrityValidator)
+  status:SUCCESS
+  | groupbycount(user.name)
+  | where @q.count > 0
+time_range_s: 300
+run_frequency_s: 60
+event_sink_keys:
+- medium_severity_alerts
+tags:
+- tactics.ta0005.defense_evasion
+- techniques.t1562.impair_defenses
+- source.wiz
