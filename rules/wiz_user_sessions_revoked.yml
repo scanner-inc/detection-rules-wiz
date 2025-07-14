@@ -5,7 +5,7 @@ description: |-
 enabled: true
 severity: Medium
 query_text: |-
-  %ingest.source_type:wiz
+  %ingest.source_type:"wiz:audit"
   action:RevokeUserSessions
   status:SUCCESS
   | groupbycount(user.name)
