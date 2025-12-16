@@ -6,7 +6,7 @@ description: |-
 enabled: true
 severity: Low
 query_text: |-
-  %ingest.source_type:wiz
+  @scnr.source_type:wiz
   action:UpdateSupportContactList
   status:SUCCESS
   | groupbycount(user.name)

@@ -5,7 +5,7 @@ description: |-
 enabled: true
 severity: High
 query_text: |-
-  %ingest.source_type:wiz
+  @scnr.source_type:wiz
   action:(CreateSAMLIdentityProvider UpdateSAMLIdentityProvider DeleteSAMLIdentityProvider ModifySAMLIdentityProviderGroupMappings)
   status:SUCCESS
   | groupbycount(user.name)
