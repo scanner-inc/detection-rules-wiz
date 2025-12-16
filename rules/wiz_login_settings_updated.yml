@@ -6,7 +6,7 @@ description: |-
 enabled: true
 severity: Medium
 query_text: |-
-  %ingest.source_type:wiz
+  @scnr.source_type:wiz
   action:UpdateLoginSettings
   status:SUCCESS
   | groupbycount(user.name)
