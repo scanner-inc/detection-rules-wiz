@@ -3,7 +3,6 @@ name: Wiz Support Contact List Updated
 description: |-
   Detect when the support contact list is updated. Unauthorized
   changes may impact incident response and support communications.
-enabled: true
 severity: Low
 query_text: |-
   @scnr.source_type:wiz

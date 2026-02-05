@@ -2,7 +2,6 @@
 name: Wiz User Created or Deleted
 description: |-
   Detect when users are created or deleted.
-enabled: true
 severity: Low
 query_text: |-
   @scnr.source_type:wiz

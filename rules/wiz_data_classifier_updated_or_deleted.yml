@@ -4,7 +4,6 @@ description: |-
   Detect when Wiz data classifiers are updated or deleted.
   Unauthorized changes may impact data discovery and
   classification.
-enabled: true
 severity: Medium
 query_text: |-
   @scnr.source_type:wiz

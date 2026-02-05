@@ -2,7 +2,6 @@
 name: Wiz SAML Identity Provider Changed
 description: |-
   Detect when SAML identity providers are created, updated, or deleted.
-enabled: true
 severity: High
 query_text: |-
   @scnr.source_type:wiz

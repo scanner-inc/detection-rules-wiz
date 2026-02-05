@@ -3,7 +3,6 @@ name: Wiz Login Settings Updated
 description: |-
   Detect when Wiz login settings are updated. Unauthorized
   changes may impact authentication and access control.
-enabled: true
 severity: Medium
 query_text: |-
   @scnr.source_type:wiz

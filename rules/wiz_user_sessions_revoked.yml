@@ -2,7 +2,6 @@
 name: Wiz User Sessions Revoked
 description: |-
   Detect when user sessions are revoked.
-enabled: true
 severity: Medium
 query_text: |-
   @scnr.source_type:wiz

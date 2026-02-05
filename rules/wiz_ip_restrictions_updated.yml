@@ -3,7 +3,6 @@ name: Wiz IP Restrictions Updated
 description: |-
   Detect when IP restrictions are updated. This may allow
   unauthorized actors to gain access to Wiz resources.
-enabled: true
 severity: High
 query_text: |-
   @scnr.source_type:wiz

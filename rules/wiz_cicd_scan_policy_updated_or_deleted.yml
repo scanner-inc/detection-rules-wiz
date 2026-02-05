@@ -3,7 +3,6 @@ name: Wiz CI/CD Scan Policy Updated or Deleted
 description: |-
   Detect when CI/CD scan policies in Wiz are updated or deleted.
   Unauthorized changes may impair security controls for CI/CD pipelines.
-enabled: true
 severity: Medium
 query_text: |-
   @scnr.source_type:wiz

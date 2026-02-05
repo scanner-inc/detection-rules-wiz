@@ -3,7 +3,6 @@ name: Wiz Integration Updated or Deleted
 description: |-
   Detect when Wiz integrations are updated or deleted. Unauthorized
   changes may disrupt integrations with other platforms.
-enabled: true
 severity: Medium
 query_text: |-
   @scnr.source_type:wiz

@@ -2,7 +2,6 @@
 name: Wiz Image Integrity Validator Updated or Deleted
 description: |-
   Detect when image integrity validators are updated or deleted.
-enabled: true
 severity: Medium
 query_text: |-
   @scnr.source_type:wiz
